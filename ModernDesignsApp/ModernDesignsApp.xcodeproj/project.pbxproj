@@ -13,6 +13,8 @@
 		BD99D14D259FB0B50000F4BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD99D14B259FB0B50000F4BE /* Main.storyboard */; };
 		BD99D14F259FB0B80000F4BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD99D14E259FB0B80000F4BE /* Assets.xcassets */; };
 		BD99D152259FB0B80000F4BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD99D150259FB0B80000F4BE /* LaunchScreen.storyboard */; };
+		BD99D161259FCB120000F4BE /* FlexibleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99D160259FCB120000F4BE /* FlexibleHeader.swift */; };
+		BD99D164259FCDCD0000F4BE /* StaticFlexibleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99D163259FCDCD0000F4BE /* StaticFlexibleHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		BD99D14E259FB0B80000F4BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD99D151259FB0B80000F4BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD99D153259FB0B80000F4BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD99D160259FCB120000F4BE /* FlexibleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleHeader.swift; sourceTree = "<group>"; };
+		BD99D163259FCDCD0000F4BE /* StaticFlexibleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFlexibleHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		BD99D144259FB0B50000F4BE /* ModernDesignsApp */ = {
 			isa = PBXGroup;
 			children = (
+				BD99D15A259FB1F30000F4BE /* FlexibleHeader */,
 				BD99D145259FB0B50000F4BE /* AppDelegate.swift */,
 				BD99D147259FB0B50000F4BE /* SceneDelegate.swift */,
 				BD99D149259FB0B50000F4BE /* ViewController.swift */,
@@ -65,6 +70,15 @@
 				BD99D153259FB0B80000F4BE /* Info.plist */,
 			);
 			path = ModernDesignsApp;
+			sourceTree = "<group>";
+		};
+		BD99D15A259FB1F30000F4BE /* FlexibleHeader */ = {
+			isa = PBXGroup;
+			children = (
+				BD99D160259FCB120000F4BE /* FlexibleHeader.swift */,
+				BD99D163259FCDCD0000F4BE /* StaticFlexibleHeader.swift */,
+			);
+			path = FlexibleHeader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD99D164259FCDCD0000F4BE /* StaticFlexibleHeader.swift in Sources */,
 				BD99D14A259FB0B50000F4BE /* ViewController.swift in Sources */,
 				BD99D146259FB0B50000F4BE /* AppDelegate.swift in Sources */,
+				BD99D161259FCB120000F4BE /* FlexibleHeader.swift in Sources */,
 				BD99D148259FB0B50000F4BE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
