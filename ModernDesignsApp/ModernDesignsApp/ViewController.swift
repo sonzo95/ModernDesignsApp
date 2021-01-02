@@ -14,13 +14,17 @@ class ViewController: UIViewController {
     var coordinator: Coordinator?
     
     private lazy var staticHeaderView: StaticFlexibleHeader = {
-        return StaticFlexibleHeader()
+        let header = StaticFlexibleHeader()
+        header.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(headerDidTap(_:))))
+        return header
     }()
     
     private var isInit = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Title"
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
@@ -37,6 +41,10 @@ class ViewController: UIViewController {
             staticHeaderView.frame = CGRect(x: 0, y: -staticHeaderView.maximumHeight, width: tableView.frame.width, height: staticHeaderView.maximumHeight)
             isInit = true
         }
+    }
+    
+    @objc private func headerDidTap(_ sender: UITapGestureRecognizer) {
+        coordinator?.showImageViewer(for: staticHeaderView.getImage())
     }
 
 }
@@ -85,7 +93,7 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

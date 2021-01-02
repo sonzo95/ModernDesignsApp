@@ -22,7 +22,8 @@ class StaticFlexibleHeader: UIView, FlexibleHeader {
     }()
     
     private lazy var blurView: UIVisualEffectView = {
-        return UIVisualEffectView(effect: nil)
+        let blurView = UIVisualEffectView(effect: nil)
+        return blurView
     }()
     
     private lazy var blurAnimator: UIViewPropertyAnimator = {
@@ -49,11 +50,15 @@ class StaticFlexibleHeader: UIView, FlexibleHeader {
         blurView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         imageView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(imageView)
-        imageView.addSubview(blurView)
+        addSubview(blurView)
     }
     
     func frameDidSet() {
         blurAnimator.fractionComplete = 1 - ((frame.height - minimumHeight) / (maximumHeight - minimumHeight))
+    }
+    
+    func getImage() -> UIImage? {
+        return imageView.image
     }
     
 }
