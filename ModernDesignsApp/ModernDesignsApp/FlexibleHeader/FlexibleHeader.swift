@@ -25,9 +25,6 @@ extension FlexibleHeader {
         if newFrame.height < minimumHeight {
             newHeight = minimumHeight
         }
-        else if newFrame.height > maximumHeight {
-            newHeight = maximumHeight
-        }
         else {
             newHeight = newFrame.height
         }

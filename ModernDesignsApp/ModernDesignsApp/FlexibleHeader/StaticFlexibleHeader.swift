@@ -21,6 +21,19 @@ class StaticFlexibleHeader: UIView, FlexibleHeader {
         return imageView
     }()
     
+    private lazy var blurView: UIVisualEffectView = {
+        return UIVisualEffectView(effect: nil)
+    }()
+    
+    private lazy var blurAnimator: UIViewPropertyAnimator = {
+        let animator = UIViewPropertyAnimator(duration: 1, curve: .easeIn)
+        animator.addAnimations {
+            self.blurView.effect = UIBlurEffect(style: .regular)
+        }
+        animator.fractionComplete = 0
+        return animator
+    }()
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
@@ -32,18 +45,15 @@ class StaticFlexibleHeader: UIView, FlexibleHeader {
     }
     
     func setupView() {
+        self.clipsToBounds = true
+        blurView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        imageView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(imageView)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            imageView.leftAnchor.constraint(equalTo: self.leftAnchor),
-            imageView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.rightAnchor.constraint(equalTo: imageView.rightAnchor),
-            self.bottomAnchor.constraint(equalTo: imageView.bottomAnchor)
-        ])
+        imageView.addSubview(blurView)
     }
     
     func frameDidSet() {
-        
+        blurAnimator.fractionComplete = 1 - ((frame.height - minimumHeight) / (maximumHeight - minimumHeight))
     }
     
 }
