@@ -1,13 +1,13 @@
 //
-//  ViewController.swift
+//  FlexibleHeaderDemoViewController.swift
 //  ModernDesignsApp
 //
-//  Created by Stefano Sonzogni on 01/01/21.
+//  Created by Stefano Sonzogni on 03/01/21.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class FlexibleHeaderDemoViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Title"
+        self.title = "Flexible Header"
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UITableViewDelegate {
+extension FlexibleHeaderDemoViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
@@ -90,7 +90,7 @@ extension ViewController: UITableViewDelegate {
     
 }
 
-extension ViewController: UITableViewDataSource {
+extension FlexibleHeaderDemoViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20

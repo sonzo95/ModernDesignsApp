@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD6BAC0225A1C71000A20238 /* FlexibleHeaderDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6BAC0125A1C71000A20238 /* FlexibleHeaderDemoViewController.swift */; };
 		BD99D146259FB0B50000F4BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99D145259FB0B50000F4BE /* AppDelegate.swift */; };
 		BD99D148259FB0B50000F4BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99D147259FB0B50000F4BE /* SceneDelegate.swift */; };
-		BD99D14A259FB0B50000F4BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99D149259FB0B50000F4BE /* ViewController.swift */; };
+		BD99D14A259FB0B50000F4BE /* ContentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99D149259FB0B50000F4BE /* ContentTableViewController.swift */; };
 		BD99D14D259FB0B50000F4BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD99D14B259FB0B50000F4BE /* Main.storyboard */; };
 		BD99D14F259FB0B80000F4BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD99D14E259FB0B80000F4BE /* Assets.xcassets */; };
 		BD99D152259FB0B80000F4BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD99D150259FB0B80000F4BE /* LaunchScreen.storyboard */; };
@@ -20,10 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD6BAC0125A1C71000A20238 /* FlexibleHeaderDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleHeaderDemoViewController.swift; sourceTree = "<group>"; };
 		BD99D142259FB0B50000F4BE /* ModernDesignsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModernDesignsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD99D145259FB0B50000F4BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD99D147259FB0B50000F4BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BD99D149259FB0B50000F4BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BD99D149259FB0B50000F4BE /* ContentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewController.swift; sourceTree = "<group>"; };
 		BD99D14C259FB0B50000F4BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD99D14E259FB0B80000F4BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD99D151259FB0B80000F4BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,7 +71,7 @@
 				BD99D15A259FB1F30000F4BE /* FlexibleHeader */,
 				BD99D145259FB0B50000F4BE /* AppDelegate.swift */,
 				BD99D147259FB0B50000F4BE /* SceneDelegate.swift */,
-				BD99D149259FB0B50000F4BE /* ViewController.swift */,
+				BD99D149259FB0B50000F4BE /* ContentTableViewController.swift */,
 				BD99D14B259FB0B50000F4BE /* Main.storyboard */,
 				BD99D14E259FB0B80000F4BE /* Assets.xcassets */,
 				BD99D150259FB0B80000F4BE /* LaunchScreen.storyboard */,
@@ -83,6 +85,7 @@
 			children = (
 				BD99D160259FCB120000F4BE /* FlexibleHeader.swift */,
 				BD99D163259FCDCD0000F4BE /* StaticFlexibleHeader.swift */,
+				BD6BAC0125A1C71000A20238 /* FlexibleHeaderDemoViewController.swift */,
 			);
 			path = FlexibleHeader;
 			sourceTree = "<group>";
@@ -174,8 +177,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD99D16925A0BA670000F4BE /* ImageViewerViewController.swift in Sources */,
+				BD6BAC0225A1C71000A20238 /* FlexibleHeaderDemoViewController.swift in Sources */,
 				BD99D164259FCDCD0000F4BE /* StaticFlexibleHeader.swift in Sources */,
-				BD99D14A259FB0B50000F4BE /* ViewController.swift in Sources */,
+				BD99D14A259FB0B50000F4BE /* ContentTableViewController.swift in Sources */,
 				BD99D146259FB0B50000F4BE /* AppDelegate.swift in Sources */,
 				BD99D161259FCB120000F4BE /* FlexibleHeader.swift in Sources */,
 				BD99D148259FB0B50000F4BE /* SceneDelegate.swift in Sources */,

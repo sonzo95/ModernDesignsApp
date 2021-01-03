@@ -22,4 +22,9 @@ class Coordinator {
         vc.image = image
         navigationController.present(vc, animated: true, completion: nil)
     }
+    
+    func showFlexibleHeaderDemo() {
+        let vc = mainStoryboard.instantiateViewController(withIdentifier: "FlexibleHeaderDemoViewController") as! FlexibleHeaderDemoViewController
+        navigationController.pushViewController(vc, animated: true)
+    }
 }

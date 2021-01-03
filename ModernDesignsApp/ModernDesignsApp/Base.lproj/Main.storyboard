@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Content Table View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="ModernDesignsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentTableViewController" id="BYZ-38-t0r" customClass="ContentTableViewController" customModule="ModernDesignsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,8 +46,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="90J-0Y-CBJ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="90J-0Y-CBJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bQU-OU-zPF"/>
@@ -66,6 +66,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fV9-YT-cMQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="624.63768115942037" y="101.78571428571428"/>
+        </scene>
+        <!--Flexible Header Demo View Controller-->
+        <scene sceneID="VCk-dN-oHL">
+            <objects>
+                <viewController storyboardIdentifier="FlexibleHeaderDemoViewController" id="um4-HQ-Ey5" customClass="FlexibleHeaderDemoViewController" customModule="ModernDesignsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VZo-du-fxI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W4q-T8-YzZ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iEa-ge-V7L"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="W4q-T8-YzZ" firstAttribute="top" secondItem="VZo-du-fxI" secondAttribute="top" id="1F7-s7-fI5"/>
+                            <constraint firstAttribute="bottom" secondItem="W4q-T8-YzZ" secondAttribute="bottom" id="4jn-gL-zQP"/>
+                            <constraint firstItem="W4q-T8-YzZ" firstAttribute="trailing" secondItem="iEa-ge-V7L" secondAttribute="trailing" id="YmI-UB-W7K"/>
+                            <constraint firstItem="W4q-T8-YzZ" firstAttribute="leading" secondItem="iEa-ge-V7L" secondAttribute="leading" id="aX6-I8-ze3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="W4q-T8-YzZ" id="XkE-Hy-ynE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D9H-vc-9Gl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1488" y="102"/>
         </scene>
     </scenes>
     <resources>

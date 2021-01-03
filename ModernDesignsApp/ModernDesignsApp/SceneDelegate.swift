@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
-        let initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        let initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ContentTableViewController") as! ContentTableViewController
         let navigationController = UINavigationController(rootViewController: initialVC)
         window?.rootViewController = navigationController
         
