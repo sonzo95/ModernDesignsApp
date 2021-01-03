@@ -7,37 +7,76 @@
 
 import UIKit
 
-class ImageViewerViewController: UIViewController {
-
-    @IBOutlet weak var imageView: UIImageView!
+class ImageViewerView: UIView {
     
-    var image: UIImage?
+    lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
-    private lazy var dismissButton: UIButton = {
+    lazy var dismissButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "icon-close"), for: .normal)
-        button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeDidTap(_:))))
         button.tintColor = .black
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        imageView.image = image
-        imageView.contentMode = .scaleAspectFit
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    func setupView() {
+        self.backgroundColor = .white
+        self.addSubview(imageView)
+        self.addSubview(dismissButton)
         
-        view.addSubview(dismissButton)
         NSLayoutConstraint.activate([
-            dismissButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            view.safeAreaLayoutGuide.rightAnchor.constraint(equalTo: dismissButton.rightAnchor, constant: 16),
+            // image
+            imageView.topAnchor.constraint(equalTo: self.topAnchor),
+            imageView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            self.rightAnchor.constraint(equalTo: imageView.rightAnchor),
+            self.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
+            
+            // dismiss button
+            dismissButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 16),
+            self.safeAreaLayoutGuide.rightAnchor.constraint(equalTo: dismissButton.rightAnchor, constant: 16),
             dismissButton.heightAnchor.constraint(equalToConstant: 24),
             dismissButton.widthAnchor.constraint(equalToConstant: 24)
         ])
     }
     
-    @objc private func closeDidTap(_ sender: UITapGestureRecognizer) {
+}
+
+class ImageViewerViewController: UIViewController {
+
+    var image: UIImage?
+    var coordinator: Coordinator?
+
+    override func loadView() {
+        super.loadView()
         
+        self.view = ImageViewerView()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        guard let view = self.view as? ImageViewerView else { return }
+        view.imageView.image = image
+        view.dismissButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeDidTap(_:))))
+    }
+    
+    @objc private func closeDidTap(_ sender: UITapGestureRecognizer) {
+        coordinator?.dismissImageViewer()
     }
 
 }

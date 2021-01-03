@@ -18,13 +18,19 @@ class Coordinator {
     }
     
     func showImageViewer(for image: UIImage?) {
-        let vc = mainStoryboard.instantiateViewController(withIdentifier: "ImageViewerViewController") as! ImageViewerViewController
+        let vc = ImageViewerViewController()
         vc.image = image
+        vc.coordinator = self
         navigationController.present(vc, animated: true, completion: nil)
+    }
+    
+    func dismissImageViewer() {
+        navigationController.dismiss(animated: true, completion: nil)
     }
     
     func showFlexibleHeaderDemo() {
         let vc = mainStoryboard.instantiateViewController(withIdentifier: "FlexibleHeaderDemoViewController") as! FlexibleHeaderDemoViewController
+        vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
 }
