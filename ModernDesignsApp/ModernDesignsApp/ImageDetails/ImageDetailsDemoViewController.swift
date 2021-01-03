@@ -11,6 +11,7 @@ class ImageDetailsDemoView: UIView {
     
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.isUserInteractionEnabled = true
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 8
@@ -51,6 +52,8 @@ class ImageDetailsDemoView: UIView {
 
 class ImageDetailsDemoViewController: UIViewController {
 
+    var coordinator: Coordinator?
+    
     override func loadView() {
         super.loadView()
         view = ImageDetailsDemoView()
@@ -62,17 +65,11 @@ class ImageDetailsDemoViewController: UIViewController {
         title = "Image Details"
 
         (view as! ImageDetailsDemoView).imageView.image = UIImage(named: "headerImage")
+        (view as! ImageDetailsDemoView).imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageDidTap(_:))))
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc private func imageDidTap(_ sender: UITapGestureRecognizer) {
+        coordinator?.showImageViewer(for: (view as! ImageDetailsDemoView).imageView.image)
     }
-    */
 
 }

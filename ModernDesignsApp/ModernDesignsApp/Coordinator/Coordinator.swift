@@ -19,6 +19,7 @@ class Coordinator {
     
     func showImageDetailsDemo() {
         let vc = ImageDetailsDemoViewController()
+        vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     
@@ -26,6 +27,9 @@ class Coordinator {
         let vc = ImageViewerViewController()
         vc.image = image
         vc.coordinator = self
+        let transitioningManager = ImageViewerTransitionManager()
+        vc.transitioningDelegate = transitioningManager
+        vc.modalPresentationStyle = .custom
         navigationController.present(vc, animated: true, completion: nil)
     }
     
