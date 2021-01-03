@@ -17,6 +17,11 @@ class Coordinator {
         self.navigationController = navigationController
     }
     
+    func showImageDetailsDemo() {
+        let vc = ImageDetailsDemoViewController()
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
     func showImageViewer(for image: UIImage?) {
         let vc = ImageViewerViewController()
         vc.image = image

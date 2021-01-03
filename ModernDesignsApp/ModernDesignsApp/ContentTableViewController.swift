@@ -27,7 +27,7 @@ class ContentTableViewController: UIViewController {
             case Self.flexibleHeader:
                 coordinator?.showFlexibleHeaderDemo()
             case Self.customTransition:
-                coordinator?.showImageViewer(for: UIImage(named: "headerImage"))
+                coordinator?.showImageDetailsDemo()
             }
         }
     }
