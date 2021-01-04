@@ -19,7 +19,7 @@ class ImageViewerView: UIView {
     lazy var dismissButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "icon-close"), for: .normal)
-        button.tintColor = .black
+        button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -35,7 +35,7 @@ class ImageViewerView: UIView {
     }
     
     func setupView() {
-        self.backgroundColor = .white
+        self.backgroundColor = .black
         self.addSubview(imageView)
         self.addSubview(dismissButton)
         
