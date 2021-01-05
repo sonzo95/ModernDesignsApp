@@ -8,28 +8,20 @@
 import Foundation
 import UIKit
 
-fileprivate enum TransitionType {
+enum TransitionType {
     case presenting
     case dismissing
     
     var animationDuration: TimeInterval { return 0.5 }
+    var cornerRadius: CGFloat { return self == .presenting ? 0 : 8 }
+    var dismissButtonAlpha: CGFloat { return self == .presenting ? 1 : 0 }
+    var imageViewerBackgroundColor: UIColor { return self == .presenting ? .black : .white }
+    
+    var other: TransitionType { return self == .presenting ? .dismissing : .presenting }
 }
 
 class ImageViewerTransitionManager: NSObject {
-    private var transitionType: TransitionType?
-}
-
-extension ImageViewerTransitionManager: UIViewControllerTransitioningDelegate {
-    
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        self.transitionType = .presenting
-        return self
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        self.transitionType = .dismissing
-        return self
-    }
+    var transitionType: TransitionType?
 }
 
 extension ImageViewerTransitionManager: UIViewControllerAnimatedTransitioning {
@@ -47,12 +39,13 @@ extension ImageViewerTransitionManager: UIViewControllerAnimatedTransitioning {
         
         let demoView = demoViewController.view as! ImageDetailsDemoView
         
-        let imageViewerCopy = ImageViewerView(frame: demoView.imageView.convert(demoView.imageView.frame, to: nil))
+        let demoFrame = demoView.imageView.convert(demoView.imageView.frame, to: nil)
+        let imageViewerCopy = ImageViewerView(frame: transitionType == .presenting ? demoFrame : containerView.frame)
         imageViewerCopy.imageView.image = demoView.imageView.image
-        imageViewerCopy.layer.cornerRadius = 8
         imageViewerCopy.clipsToBounds = true
-        imageViewerCopy.dismissButton.alpha = 0
-        imageViewerCopy.backgroundColor = .white
+        imageViewerCopy.layer.cornerRadius = transitionType.other.cornerRadius
+        imageViewerCopy.dismissButton.alpha = transitionType.other.dismissButtonAlpha
+        imageViewerCopy.backgroundColor = transitionType.other.imageViewerBackgroundColor
         containerView.addSubview(imageViewerCopy)
         
         // ESSENTIAL!
@@ -66,11 +59,10 @@ extension ImageViewerTransitionManager: UIViewControllerAnimatedTransitioning {
         
         let animator = UIViewPropertyAnimator(duration: transitionType.animationDuration, dampingRatio: 0.75)
         animator.addAnimations {
-            imageViewerCopy.layer.cornerRadius = 0
-            imageViewerCopy.frame = containerView.frame
-            imageViewerCopy.backgroundColor = .black
-            imageViewerCopy.dismissButton.tintColor = .white
-            imageViewerCopy.dismissButton.alpha = 1
+            imageViewerCopy.layer.cornerRadius = transitionType.cornerRadius
+            imageViewerCopy.frame = transitionType == .presenting ? containerView.frame : demoFrame
+            imageViewerCopy.backgroundColor = transitionType.imageViewerBackgroundColor
+            imageViewerCopy.dismissButton.alpha = transitionType.dismissButtonAlpha
         }
         animator.addCompletion { _ in
             imageViewerCopy.removeFromSuperview()
