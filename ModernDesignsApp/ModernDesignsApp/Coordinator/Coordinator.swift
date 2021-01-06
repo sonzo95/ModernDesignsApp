@@ -23,12 +23,15 @@ class Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func showImageViewer(for image: UIImage?) {
+    func showImageViewer(for image: UIImage?, animatorDataSource: ImageViewerAnimatedTransitioningDataSource?) {
         let vc = ImageViewerViewController()
         vc.image = image
         vc.coordinator = self
-        vc.transitioningDelegate = vc
-        vc.modalPresentationStyle = .custom
+        if let animatorDataSource = animatorDataSource {
+            vc.transitioningDelegate = vc
+            vc.modalPresentationStyle = .custom
+            vc.animator.dataSource = animatorDataSource
+        }
         navigationController.present(vc, animated: true, completion: nil)
     }
     

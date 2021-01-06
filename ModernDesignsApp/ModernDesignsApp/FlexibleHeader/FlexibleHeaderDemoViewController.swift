@@ -15,7 +15,6 @@ class FlexibleHeaderDemoViewController: UIViewController {
     
     private lazy var staticHeaderView: StaticFlexibleHeader = {
         let header = StaticFlexibleHeader()
-        header.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(headerDidTap(_:))))
         return header
     }()
     
@@ -41,10 +40,6 @@ class FlexibleHeaderDemoViewController: UIViewController {
             staticHeaderView.frame = CGRect(x: 0, y: -staticHeaderView.maximumHeight, width: tableView.frame.width, height: staticHeaderView.maximumHeight)
             isInit = true
         }
-    }
-    
-    @objc private func headerDidTap(_ sender: UITapGestureRecognizer) {
-        coordinator?.showImageViewer(for: staticHeaderView.getImage())
     }
 
 }

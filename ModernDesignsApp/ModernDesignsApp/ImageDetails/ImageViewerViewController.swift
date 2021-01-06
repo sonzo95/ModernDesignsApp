@@ -60,7 +60,7 @@ class ImageViewerViewController: UIViewController {
 
     var image: UIImage?
     var coordinator: Coordinator?
-    private var animator: ImageViewerAnimatedTransitioning?
+    var animator = ImageViewerAnimatedTransitioning()
     
     override func loadView() {
         super.loadView()
@@ -85,13 +85,12 @@ class ImageViewerViewController: UIViewController {
 extension ImageViewerViewController: UIViewControllerTransitioningDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        animator = ImageViewerAnimatedTransitioning()
-        animator?.transitionType = .presenting
+        animator.transitionType = .presenting
         return animator
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        animator?.transitionType = .dismissing
+        animator.transitionType = .dismissing
         return animator
     }
 }

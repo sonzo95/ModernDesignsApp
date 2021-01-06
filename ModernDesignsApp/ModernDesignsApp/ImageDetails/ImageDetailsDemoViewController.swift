@@ -69,7 +69,15 @@ class ImageDetailsDemoViewController: UIViewController {
     }
 
     @objc private func imageDidTap(_ sender: UITapGestureRecognizer) {
-        coordinator?.showImageViewer(for: (view as! ImageDetailsDemoView).imageView.image)
+        coordinator?.showImageViewer(for: (view as! ImageDetailsDemoView).imageView.image, animatorDataSource: self)
     }
 
+}
+
+extension ImageDetailsDemoViewController: ImageViewerAnimatedTransitioningDataSource {
+    
+    func imageViewToBeExpanded() -> UIImageView? {
+        return (view as! ImageDetailsDemoView).imageView
+    }
+    
 }
