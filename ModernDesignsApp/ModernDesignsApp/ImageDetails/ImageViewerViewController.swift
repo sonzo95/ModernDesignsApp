@@ -36,6 +36,7 @@ class ImageViewerView: UIView {
     
     func setupView() {
         self.backgroundColor = .black
+        self.layer.cornerCurve = .continuous
         self.addSubview(imageView)
         self.addSubview(dismissButton)
         
@@ -61,6 +62,7 @@ class ImageViewerViewController: UIViewController {
     var image: UIImage?
     var coordinator: Coordinator?
     var animator = ImageViewerAnimatedTransitioning()
+    private var panningAnimator: UIViewPropertyAnimator?
     
     override func loadView() {
         super.loadView()
@@ -74,10 +76,53 @@ class ImageViewerViewController: UIViewController {
         guard let view = self.view as? ImageViewerView else { return }
         view.imageView.image = image
         view.dismissButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeDidTap(_:))))
+        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:))))
     }
     
     @objc private func closeDidTap(_ sender: UITapGestureRecognizer) {
         coordinator?.dismissImageViewer()
+    }
+    
+    @objc private func handlePanGesture(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: view)
+        let velocity = sender.velocity(in: view)
+        let thresholdY: CGFloat = 40.0
+        
+        switch sender.state {
+        case .began:
+            panningAnimator = makePanningAnimator()
+            panningAnimator?.fractionComplete = translation.y / thresholdY
+        case .changed:
+            if translation.y < thresholdY {
+                panningAnimator?.fractionComplete = translation.y / thresholdY
+            }
+            else {
+                panningAnimator?.stopAnimation(true)
+                dismiss(animated: true, completion: nil)
+            }
+        case .ended:
+            if velocity.y > 10 {
+                panningAnimator?.stopAnimation(true)
+                dismiss(animated: true, completion: nil)
+            }
+            else {
+                panningAnimator?.isReversed = true
+                panningAnimator?.startAnimation()
+            }
+            panningAnimator = nil
+        default:
+            return
+        }
+    }
+    
+    private func makePanningAnimator() -> UIViewPropertyAnimator {
+        let pa = UIViewPropertyAnimator(duration: 1, curve: .linear) {
+            self.view.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+            self.view.layer.cornerRadius = 32
+        }
+        pa.pauseAnimation()
+        pa.fractionComplete = 0
+        return pa
     }
 
 }

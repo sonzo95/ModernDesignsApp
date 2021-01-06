@@ -68,7 +68,9 @@ class ImageViewerAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransi
         animator.addCompletion { _ in
             imageViewerCopy.removeFromSuperview()
             imageViewerViewController.view.isHidden = false
-            sourceImageView.isHidden = false
+            if transitionType == .dismissing {
+                sourceImageView.isHidden = false
+            }
             transitionContext.completeTransition(true)
         }
         animator.startAnimation()
