@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD535D5F25A26A0F00EACD5A /* ImageViewerTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD535D5E25A26A0F00EACD5A /* ImageViewerTransitionManager.swift */; };
+		BD535D5F25A26A0F00EACD5A /* ImageViewerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD535D5E25A26A0F00EACD5A /* ImageViewerAnimatedTransitioning.swift */; };
 		BD6BAC0225A1C71000A20238 /* FlexibleHeaderDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6BAC0125A1C71000A20238 /* FlexibleHeaderDemoViewController.swift */; };
 		BD99D146259FB0B50000F4BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99D145259FB0B50000F4BE /* AppDelegate.swift */; };
 		BD99D148259FB0B50000F4BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99D147259FB0B50000F4BE /* SceneDelegate.swift */; };
@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BD535D5E25A26A0F00EACD5A /* ImageViewerTransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerTransitionManager.swift; sourceTree = "<group>"; };
+		BD535D5E25A26A0F00EACD5A /* ImageViewerAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		BD6BAC0125A1C71000A20238 /* FlexibleHeaderDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleHeaderDemoViewController.swift; sourceTree = "<group>"; };
 		BD99D142259FB0B50000F4BE /* ModernDesignsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModernDesignsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD99D145259FB0B50000F4BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			children = (
 				BD99D16825A0BA670000F4BE /* ImageViewerViewController.swift */,
 				BDA59B9425A2519B00A5CAF8 /* ImageDetailsDemoViewController.swift */,
-				BD535D5E25A26A0F00EACD5A /* ImageViewerTransitionManager.swift */,
+				BD535D5E25A26A0F00EACD5A /* ImageViewerAnimatedTransitioning.swift */,
 			);
 			path = ImageDetails;
 			sourceTree = "<group>";
@@ -194,7 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD99D16925A0BA670000F4BE /* ImageViewerViewController.swift in Sources */,
-				BD535D5F25A26A0F00EACD5A /* ImageViewerTransitionManager.swift in Sources */,
+				BD535D5F25A26A0F00EACD5A /* ImageViewerAnimatedTransitioning.swift in Sources */,
 				BD6BAC0225A1C71000A20238 /* FlexibleHeaderDemoViewController.swift in Sources */,
 				BD99D164259FCDCD0000F4BE /* StaticFlexibleHeader.swift in Sources */,
 				BD99D14A259FB0B50000F4BE /* ContentTableViewController.swift in Sources */,

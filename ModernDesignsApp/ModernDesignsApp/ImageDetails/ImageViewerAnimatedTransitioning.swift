@@ -20,11 +20,9 @@ enum TransitionType {
     var other: TransitionType { return self == .presenting ? .dismissing : .presenting }
 }
 
-class ImageViewerTransitionManager: NSObject {
+class ImageViewerAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
     var transitionType: TransitionType?
-}
-
-extension ImageViewerTransitionManager: UIViewControllerAnimatedTransitioning {
+    var targetImageView: UIImageView?
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return self.transitionType?.animationDuration ?? 0
