@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BD535D5F25A26A0F00EACD5A /* ImageViewerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD535D5E25A26A0F00EACD5A /* ImageViewerAnimatedTransitioning.swift */; };
 		BD6BAC0225A1C71000A20238 /* FlexibleHeaderDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6BAC0125A1C71000A20238 /* FlexibleHeaderDemoViewController.swift */; };
+		BD835CDD25B0E53D0099AEDF /* SelfSizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD835CDC25B0E53D0099AEDF /* SelfSizingTableView.swift */; };
+		BD835CE125B0E9180099AEDF /* SelfSizingTableDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD835CE025B0E9180099AEDF /* SelfSizingTableDemoViewController.swift */; };
 		BD99D146259FB0B50000F4BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99D145259FB0B50000F4BE /* AppDelegate.swift */; };
 		BD99D148259FB0B50000F4BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99D147259FB0B50000F4BE /* SceneDelegate.swift */; };
 		BD99D14A259FB0B50000F4BE /* ContentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99D149259FB0B50000F4BE /* ContentTableViewController.swift */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		BD535D5E25A26A0F00EACD5A /* ImageViewerAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		BD6BAC0125A1C71000A20238 /* FlexibleHeaderDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleHeaderDemoViewController.swift; sourceTree = "<group>"; };
+		BD835CDC25B0E53D0099AEDF /* SelfSizingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizingTableView.swift; sourceTree = "<group>"; };
+		BD835CE025B0E9180099AEDF /* SelfSizingTableDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizingTableDemoViewController.swift; sourceTree = "<group>"; };
 		BD99D142259FB0B50000F4BE /* ModernDesignsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModernDesignsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD99D145259FB0B50000F4BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD99D147259FB0B50000F4BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +57,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD835CDB25B0E50B0099AEDF /* SelfSizingTableView */ = {
+			isa = PBXGroup;
+			children = (
+				BD835CDC25B0E53D0099AEDF /* SelfSizingTableView.swift */,
+				BD835CE025B0E9180099AEDF /* SelfSizingTableDemoViewController.swift */,
+			);
+			path = SelfSizingTableView;
+			sourceTree = "<group>";
+		};
 		BD99D139259FB0B50000F4BE = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +85,7 @@
 		BD99D144259FB0B50000F4BE /* ModernDesignsApp */ = {
 			isa = PBXGroup;
 			children = (
+				BD835CDB25B0E50B0099AEDF /* SelfSizingTableView */,
 				BDA59B9725A251BA00A5CAF8 /* Extensions */,
 				BD99D16C25A0BCE80000F4BE /* Coordinator */,
 				BD99D16725A0BA3C0000F4BE /* ImageDetails */,
@@ -194,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD99D16925A0BA670000F4BE /* ImageViewerViewController.swift in Sources */,
+				BD835CE125B0E9180099AEDF /* SelfSizingTableDemoViewController.swift in Sources */,
 				BD535D5F25A26A0F00EACD5A /* ImageViewerAnimatedTransitioning.swift in Sources */,
 				BD6BAC0225A1C71000A20238 /* FlexibleHeaderDemoViewController.swift in Sources */,
 				BD99D164259FCDCD0000F4BE /* StaticFlexibleHeader.swift in Sources */,
@@ -202,6 +217,7 @@
 				BD99D146259FB0B50000F4BE /* AppDelegate.swift in Sources */,
 				BDA59B9925A251D100A5CAF8 /* UIViewExtensions.swift in Sources */,
 				BD99D161259FCB120000F4BE /* FlexibleHeader.swift in Sources */,
+				BD835CDD25B0E53D0099AEDF /* SelfSizingTableView.swift in Sources */,
 				BD99D148259FB0B50000F4BE /* SceneDelegate.swift in Sources */,
 				BD99D16E25A0BCF70000F4BE /* Coordinator.swift in Sources */,
 			);

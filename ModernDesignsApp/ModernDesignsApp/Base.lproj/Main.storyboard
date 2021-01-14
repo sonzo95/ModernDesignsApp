@@ -68,10 +68,69 @@
             </objects>
             <point key="canvasLocation" x="587" y="102"/>
         </scene>
+        <!--Self Sizing Table Demo View Controller-->
+        <scene sceneID="UlU-dF-mwd">
+            <objects>
+                <viewController storyboardIdentifier="SelfSizingTableDemoViewController" id="kyq-1k-G9H" customClass="SelfSizingTableDemoViewController" customModule="ModernDesignsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Cm-Aw-ATd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="382" placeholderIntrinsicHeight="296" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pt6-hN-gmw" customClass="SelfSizingTableView" customModule="ModernDesignsApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="60" width="382" height="296"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7Ga-KC-xP5">
+                                <rect key="frame" x="16" y="372" width="382" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQ2-Ja-Yku">
+                                        <rect key="frame" x="0.0" y="0.0" width="191" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Remove one!"/>
+                                        <connections>
+                                            <action selector="removeButtonDidTap:" destination="kyq-1k-G9H" eventType="touchUpInside" id="yuQ-If-sZU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9GT-bs-a0d">
+                                        <rect key="frame" x="191" y="0.0" width="191" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Add one!"/>
+                                        <connections>
+                                            <action selector="addButtonDidTap:" destination="kyq-1k-G9H" eventType="touchUpInside" id="gRu-Yx-hGy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gtG-t7-I7J"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="Pt6-hN-gmw" firstAttribute="leading" secondItem="gtG-t7-I7J" secondAttribute="leading" constant="16" id="Qcc-Wj-NWN"/>
+                            <constraint firstItem="gtG-t7-I7J" firstAttribute="trailing" secondItem="7Ga-KC-xP5" secondAttribute="trailing" constant="16" id="acm-Yg-HbA"/>
+                            <constraint firstItem="Pt6-hN-gmw" firstAttribute="top" secondItem="gtG-t7-I7J" secondAttribute="top" constant="16" id="b8N-Oj-fFS"/>
+                            <constraint firstItem="gtG-t7-I7J" firstAttribute="trailing" secondItem="Pt6-hN-gmw" secondAttribute="trailing" constant="16" id="c0S-5A-JWu"/>
+                            <constraint firstItem="gtG-t7-I7J" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7Ga-KC-xP5" secondAttribute="bottom" constant="16" id="evv-s1-K4c"/>
+                            <constraint firstItem="7Ga-KC-xP5" firstAttribute="leading" secondItem="gtG-t7-I7J" secondAttribute="leading" constant="16" id="rT6-x6-Tqu"/>
+                            <constraint firstItem="7Ga-KC-xP5" firstAttribute="top" secondItem="Pt6-hN-gmw" secondAttribute="bottom" constant="16" id="syE-4q-gAk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="9GT-bs-a0d" id="wdf-kt-1Qu"/>
+                        <outlet property="removeButton" destination="VQ2-Ja-Yku" id="gWt-om-ETh"/>
+                        <outlet property="tableView" destination="Pt6-hN-gmw" id="znN-qx-vMj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Emn-fb-KMS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1355.072463768116" y="101.78571428571428"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

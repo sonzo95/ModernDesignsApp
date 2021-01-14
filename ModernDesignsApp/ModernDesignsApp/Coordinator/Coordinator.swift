@@ -44,4 +44,9 @@ class Coordinator {
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func showSelfSizingTableDemo() {
+        let vc = mainStoryboard.instantiateViewController(withIdentifier: "SelfSizingTableDemoViewController") as! SelfSizingTableDemoViewController
+        navigationController.pushViewController(vc, animated: true)
+    }
 }

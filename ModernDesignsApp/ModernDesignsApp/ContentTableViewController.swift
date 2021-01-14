@@ -12,22 +12,27 @@ class ContentTableViewController: UIViewController {
     enum Contents: Int, CaseIterable {
         case flexibleHeader = 0
         case customTransition
+        case selfSizingTableView
         
         var title: String {
             switch self {
-            case Self.flexibleHeader:
+            case .flexibleHeader:
                 return "Flexible Header"
-            case Self.customTransition:
+            case .customTransition:
                 return "Custom Transition"
+            case .selfSizingTableView:
+                return "Self Sizing Table View"
             }
         }
         
         func continueNavigation(coordinator: Coordinator?) {
             switch self {
-            case Self.flexibleHeader:
+            case .flexibleHeader:
                 coordinator?.showFlexibleHeaderDemo()
-            case Self.customTransition:
+            case .customTransition:
                 coordinator?.showImageDetailsDemo()
+            case .selfSizingTableView:
+                coordinator?.showSelfSizingTableDemo()
             }
         }
     }
